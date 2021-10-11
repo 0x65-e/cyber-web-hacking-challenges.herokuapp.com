@@ -10,6 +10,10 @@ def spiderman(request):
 def spiderman_flag(request):
     return HttpResponse("flag{w0rld_w1d3_w3b}")
 
+def spiderman_false_flag(request, false_flag):
+    return HttpResponse("Sorry, you just missed Spiderman. He's out crawling the web somewhere else.")
+
+
 def postmaster(request):
     if request.method == 'GET':
         return render(request, 'postmaster.html')
