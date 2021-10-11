@@ -32,6 +32,12 @@ urlpatterns = [
     path('spiderman/033a76aab1838ba86ec98d952f04fab7/', views.spiderman_flag),
     path('spiderman/<str:false_flag>/', views.spiderman_false_flag),
     path('postmaster/', csrf_exempt(views.postmaster), name="postmaster"),
+    path('jones/', views.indiana_jones, name="jones"),
+    path('jones/raiders_of_the_lost_ark/', views.jones_site_raiders, name="raiders"),
+    path('jones/temple_of_doom/', views.jones_site_doom, name="temple"),
+    path('jones/last_crusade/', views.jones_site_crusade, name="crusade"),
+    path('jones/kingdom_of_the_crystal_skull/', views.jones_site_skull, name="skull"),
+    path('jones/untitled/', views.jones_site_fifth, name="untitled"),
     path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap'),
     path('robots.txt', TemplateView.as_view(template_name="robots.txt", content_type="text/plain")),
 ]
