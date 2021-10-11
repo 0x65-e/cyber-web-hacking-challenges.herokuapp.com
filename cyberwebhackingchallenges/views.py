@@ -42,3 +42,6 @@ def jones_site_skull(request):
 
 def jones_site_fifth(request):
     return HttpResponse("flag{beating_a_dead_horse}")
+
+def spaghetti(request):
+    return render(request, "spaghetti.html")
