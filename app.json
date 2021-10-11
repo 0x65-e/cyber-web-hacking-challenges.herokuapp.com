@@ -1,0 +1,22 @@
+{
+    "name": "ACM Cyber Web Hacking Challenges",
+    "description": "Intro to Web Hacking Challenges for Fall 2021 Cyber Academy",
+    "image": "heroku/python",
+    "repository": "https://github.com/0x65-e/cyber-web-hacking-challenges.herokuapp.com",
+    "keywords": ["python", "django" ],
+    "addons": [],
+    "env": {
+      "SECRET_KEY": {
+        "description": "django-insecure-j021qnhreu1f^3ru2)^3!&pxd)ilzy%_409bbq1ya%r=3q5k73",
+        "generator": "secret"
+      }
+    },
+    "environments": {
+      "test": {
+        "scripts": {
+          "test-setup": "python manage.py collectstatic --noinput",
+          "test": "python manage.py test"
+        }
+      }
+    }
+  }
