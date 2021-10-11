@@ -40,6 +40,8 @@ urlpatterns = [
     path('jones/kingdom_of_the_crystal_skull/', views.jones_site_skull, name="skull"),
     path('jones/untitled/', views.jones_site_fifth, name="untitled"),
     path('spaghetti/', views.spaghetti, name="spaghetti"),
+    path('social_insecurity/', views.social_insecurity, name="social-insecurity"),
+    path('social_insecurity/<int:number>', views.social_insecurity_number),
     path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap'),
     path('robots.txt', TemplateView.as_view(template_name="robots.txt", content_type="text/plain")),
 ]

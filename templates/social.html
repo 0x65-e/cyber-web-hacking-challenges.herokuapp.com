@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Social Insecurity</title>
+        <link rel="stylesheet" href="/static/css/style.css">
+        <script>
+            function goToRand() {
+                loc = "/social_insecurity/";
+                for (i = 0; i < 9; i++) {
+                    loc += Math.floor((Math.random() * 10));
+                }
+                window.location.pathname = loc;
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Social Insecurity</h1>
+        <p>{{ message }}</p>
+        <button onClick=goToRand()>Random</button>
+        <a href="/">&lt;- Back to Challenges</a>
+    </body>
+</html>
