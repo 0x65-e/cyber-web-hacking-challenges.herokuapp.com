@@ -1,2 +1,2 @@
 User-agent: *
-Disallow: /
+Disallow: /spiderman/033a76aab1838ba86ec98d952f04fab7
