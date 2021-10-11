@@ -32,6 +32,7 @@ urlpatterns = [
     path('spiderman/033a76aab1838ba86ec98d952f04fab7/', views.spiderman_flag),
     path('spiderman/<str:false_flag>/', views.spiderman_false_flag),
     path('postmaster/', csrf_exempt(views.postmaster), name="postmaster"),
+    path('cookie_bar/', views.cookie_bar, name="cookie-bar"),
     path('jones/', views.indiana_jones, name="jones"),
     path('jones/raiders_of_the_lost_ark/', views.jones_site_raiders, name="raiders"),
     path('jones/temple_of_doom/', views.jones_site_doom, name="temple"),

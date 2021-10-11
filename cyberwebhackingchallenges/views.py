@@ -20,6 +20,11 @@ def postmaster(request):
         return HttpResponse("flag{you_might_call_yourself_POSTmaster_general}")
     return HttpResponse("I don't know what happened...")
 
+def cookie_bar(request):
+    response = render(request, 'cookie.html')
+    response.set_cookie('flag', 'flag{m&m_choc0late_ch1p_c00kies}', path='/cookie_bar/')
+    return response
+
 def indiana_jones(request):
     return render(request, 'jones.html')
 
