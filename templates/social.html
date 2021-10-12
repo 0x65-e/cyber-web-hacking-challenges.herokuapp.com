@@ -17,6 +17,8 @@
     <body>
         <h1>Social Insecurity</h1>
         <p>{{ message }}</p>
+        {% if number %}<p>Your number is: {{number}}</p>{% endif %}
+        <!-- My social security number is 748-53-2557 -->
         <button onClick=goToRand()>Random</button>
         <a href="/">&lt;- Back to Challenges</a>
     </body>

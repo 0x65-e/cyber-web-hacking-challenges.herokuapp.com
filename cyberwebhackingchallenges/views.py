@@ -52,4 +52,4 @@ def social_insecurity(request):
 def social_insecurity_number(request, number):
     if number == 748532557:
         return HttpResponse("flag{its_just_a_random_number}")
-    return render(request, "social.html", { "message": "Click below to get your new Social Security Number!" })
+    return render(request, "social.html", { "message": "Click below to get your new Social Security Number!", "number": number })
