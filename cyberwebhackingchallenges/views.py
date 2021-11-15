@@ -58,5 +58,10 @@ def url_sanitizer(request):
     return render(request, "sanitizer.html", { "message": "Try to get to /sanitizer/flag"})
 
 def url_sanitizer_path(request, path):
-    sanitized_path = "Your sanitized path is: /sanitizer/" + path.replace('flag', '')
+    sanitized_path = path.replace('flag', '')
+    message = ""
+    if sanitized_path == "flag":
+        message = 'flag{uRl_replAc3m3nt_m4st3r}'
+    else:
+        message = "Your sanitized path is: /sanitizer/" + sanitized_path
     return render(request, "sanitizer.html", { "message": sanitized_path })
