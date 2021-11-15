@@ -44,4 +44,6 @@ urlpatterns = [
     path('social_insecurity/<int:number>', views.social_insecurity_number),
     path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap'),
     path('robots.txt', TemplateView.as_view(template_name="robots.txt", content_type="text/plain")),
+    path('sanitizer/', views.url_sanitizer, name="url-sanitizer"),
+    path('sanitizer/<str:path>', views.url_sanitizer_path),
 ]
