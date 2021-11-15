@@ -47,4 +47,5 @@ urlpatterns = [
     path('sanitizer/', views.url_sanitizer, name="url-sanitizer"),
     path('sanitizer/<str:path>', views.url_sanitizer_path),
     path('telescope/', views.json_web_telescope, name="telescope"),
+    path('robot_detection/', views.robot_detection, name="robot-detection"),
 ]

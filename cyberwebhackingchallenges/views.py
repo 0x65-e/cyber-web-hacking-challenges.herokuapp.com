@@ -85,3 +85,10 @@ def json_web_telescope(request):
         basic_user_token = jwt.encode({"user": "basic"}, "telescope", algorithm="HS256")
         response.set_cookie('token', basic_user_token, path='/telescope/')
         return response
+
+def robot_detection(request):
+    user_agent = request.META.get("HTTP_USER_AGENT", "")
+    if user_agent == "Twitterbot":
+        return render(request, "robot.html", { "message": "You are Twitterbot! Here's your flag: flag{tw1tt3rb0t_c4n_b0lt_my_nUtz}"})
+    else:
+        return render(request, "robot.html", { "message": "You are not Twitterbot" })
