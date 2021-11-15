@@ -91,4 +91,4 @@ def robot_detection(request):
     if user_agent == "Twitterbot":
         return render(request, "robot.html", { "message": "You are Twitterbot! Here's your flag: flag{tw1tt3rb0t_c4n_b0lt_my_nUtz}"})
     else:
-        return render(request, "robot.html", { "message": "You are not Twitterbot" })
+        return render(request, "robot.html", { "message": "You are not Twitterbot, you are " + user_agent })
