@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+import jwt
 
 def index(request):
     return render(request, 'index.html')
@@ -65,3 +66,22 @@ def url_sanitizer_path(request, path):
     else:
         message = "Your sanitized path is: /sanitizer/" + sanitized_path
     return render(request, "sanitizer.html", { "message": message })
+
+def json_web_telescope(request):
+    token = request.COOKIES.get("token", "")
+    if token:
+        try:
+            decoded_token = jwt.decode(token, "telescope", algorithms=["HS256"])
+            if decoded_token["user"] == "admin":
+                return render(request, "admin.html")
+            elif decoded_token["user"] == "basic":
+                return render(request, "user.html")
+            else:
+                raise Exception
+        except:
+            return HttpResponse("You're doing something fishy...")
+    else:
+        response = render(request, 'user.html')
+        basic_user_token = jwt.encode({"user": "basic"}, "telescope", algorithm="HS256")
+        response.set_cookie('token', basic_user_token, path='/telescope/')
+        return response
